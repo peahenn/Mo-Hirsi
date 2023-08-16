@@ -1,2 +1,0 @@
-# Mo-Hirsi
-Portfolio
