@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoNames Info</title>
+    <style>
+        /* ... [same styles you provided] ... */
+    </style>
+    <link rel="stylesheet" href="libs/css/styles.css">
+
+
+</head>
+
+<body>
+   
+
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="countrySelect">Countries</label>
+                        <select id="countrySelect">
+                            <option value="GB">UK</option>
+                            <option value="CA">Canada</option>
+                            <option value="US">USA</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label for="infoTypeSelect">Info Type</label>
+                        <select id="infoTypeSelect">
+                            <option value="countryInfo">Country Info</option>
+                            <option value="earthquakes">Earthquakes</option>
+                            <option value="weather">Weather</option>
+                            <option value="neighbours">Neighbouring Countries</option>
+                            <option value="capitalInfo">Capital City Information</option>
+                            <option value="timezone">Timezone Information</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button>Submit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div id="output"></div>
+    
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="libs/js/script.js"></script>
+    </body>
+    </html>
