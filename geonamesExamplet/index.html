@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX/PHP/CURL/JSON example</title>
+    <link rel="stylesheet" href="libs/css/styles.css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>API Name</th>
+                <th>API Description</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Timezone</td>
+                <td>This API shows the timezone of a country</td>
+                <td><input type="text" id="lat" placeholder="Latitude"></td>
+                <td><input type="text" id="lng" placeholder="Longitude"></td>
+                <td><button id="buttonrun1">Submit</button></td>
+            </tr>
+            <tr id="timezoneDetailsRow">
+                <td colspan="5">
+                    <table>
+                        <tr>
+                            <td colspan="2"><h2>Timezone Details</h2></td>
+                        </tr>
+                        <tr>
+                            <td>Sunrise:</td>
+                            <td><span id="txtSunrise"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Longitude:</td>
+                            <td><span id="txtLng"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Country Code:</td>
+                            <td><span id="txtCountryCode"></span></td>
+                        </tr>
+                        <tr>
+                            <td>GMT Offset:</td>
+                            <td><span id="txtGmtOffset"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Raw Offset:</td>
+                            <td><span id="txtRawOffset"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Sunset:</td>
+                            <td><span id="txtSunset"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Timezone ID:</td>
+                            <td><span id="txtTimeZone"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Country Name:</td>
+                            <td><span id="txtCountryName"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Time:</td>
+                            <td><span id="txtTime"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Latitude:</td>
+                            <td><span id="txtLat"></span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>API Name</th>
+                <th>API Description</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Find nearest Address</td>
+                <td>Finds the nearest address for a given lat/lng</td>
+                <td><input type="text" id="lat2" placeholder="Latitude"></td>
+                <td><input type="text" id="lng2" placeholder="Longitude"></td>
+                <td><button id="buttonrun2">Submit</button></td>
+            </tr>
+            <tr id="nearestAddressDetailsRow">
+                <td colspan="5">
+                    <h2>Nearest Address Details</h2>
+                    <table>
+                        <tr>
+                            <td>adminCode2:</td>
+                            <td><span id="txtAdminCode2"></span></td>
+                        </tr>
+                        <tr>
+                            <td>adminCode1:</td>
+                            <td><span id="txtAdminCode1"></span></td>
+                        </tr>
+                        <tr>
+                            <td>lng:</td>
+                            <td><span id="txtLng2"></span></td>
+                        </tr>
+                        <tr>
+                            <td>distance:</td>
+                            <td><span id="txtDistance"></span></td>
+                        </tr>
+                        <tr>
+                            <td>streetNumber:</td>
+                            <td><span id="txtStreetNumber"></span></td>
+                        </tr>
+                        <tr>
+                            <td>mtfcc:</td>
+                            <td><span id="txtMtfcc"></span></td>
+                        </tr>
+                        <tr>
+                            <td>placename:</td>
+                            <td><span id="txtPlaceName"></span></td>
+                        </tr>
+                        <tr>
+                            <td>adminName2:</td>
+                            <td><span id="txtAdminName2"></span></td>
+                        </tr>
+                        <tr>
+                            <td>street:</td>
+                            <td><span id="txtStreet"></span></td>
+                        </tr>
+                        <tr>
+                            <td>postalcode:</td>
+                            <td><span id="txtPostalCode"></span></td>
+                        </tr>
+                        <tr>
+                            <td>countryCode:</td>
+                            <td><span id="txtCountryCode"></span></td>
+                        </tr>
+                        <tr>
+                            <td>adminName1:</td>
+                            <td><span id="txtAdminName1"></span></td>
+                        </tr>
+                        <tr>
+                            <td>lat:</td>
+                            <td><span id="txtLat2"></span></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            
+            
+        </tbody>
+    </table>
+    
+
+    
+
+    <script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+    <script type="application/javascript" src="libs/js/script.js"></script>
+    <script type="application/javascript" src="libs/js/nearestAddress.js"></script>
+</body>
+</html>
