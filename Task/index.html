@@ -21,8 +21,8 @@
             <tr>
                 <td>Timezone</td>
                 <td>This API shows the timezone of a country</td>
-                <td><input type="text" id="lat" placeholder="Latitude"></td>
-                <td><input type="text" id="lng" placeholder="Longitude"></td>
+                <td><input type="text" id="lat" placeholder="47.01"></td>
+                <td><input type="text" id="lng" placeholder="10.2"></td>
                 <td><button id="buttonrun1">Submit</button></td>
             </tr>
             <tr id="timezoneDetailsRow">
@@ -81,8 +81,8 @@
             <tr>
                 <td>Find nearest Address</td>
                 <td>Finds the nearest address for a given lat/lng</td>
-                <td><input type="text" id="lat2" placeholder="Latitude"></td>
-                <td><input type="text" id="lng2" placeholder="Longitude"></td>
+                <td><input type="text" id="lat2" placeholder="37"></td>
+                <td><input type="text" id="lng2" placeholder="-122"></td>
                 <td><button id="buttonrun2">Submit</button></td>
             </tr>
             <tr id="nearestAddressDetailsRow">
@@ -103,6 +103,11 @@
                             <td>street:</td>
                             <td><span id="txtStreet"></span></td>
                         </tr>
+                        <tr>
+                            <td>Country Code:</td>
+                            <td><span id="txtCountryCode"></span></td>
+                        </tr>
+                        
                         
                         <tr>
                             <td>lat:</td>
@@ -131,12 +136,12 @@
             <tr>
                 <td>Weather</td>
                 <td> Find near by Weather</td>
-                <td><input type="text" id="lat3" placeholder="Latitude"></td>
-                <td><input type="text" id="lng3" placeholder="Longitude"></td>
+                <td><input type="text" id="lat3" placeholder="43.35"></td>
+                <td><input type="text" id="lng3" placeholder="-1.8"></td>
                 <td><button id="buttonrun3">Submit</button></td>
             </tr>
 
-            <tr id="weatherStationDetails row">
+            <tr id="weatherStationDetailsRow">
                 <td colspan="5">
                     <h2> Weather Station Details</h2>
                     <table>
