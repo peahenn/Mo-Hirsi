@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/css/leaflet.css">
+    <link rel="stylesheet" href="libs/css/toastify.min.css" >
+    <link rel="stylesheet" href="libs/css/MarkerCluster.Default.min.css">
+     <link rel="stylesheet" href="libs/css/leaflet.markercluster.css">
+     <link rel="stylesheet" href="libs/css/leaflet.extra-markers.min.css">
+      <link rel="stylesheet" href="libs/css/font-awesome.min.css">
+       <link rel="stylesheet" href="libs/css/bootstrap.min.css">
+       <link rel="stylesheet" href="libs/css/Leaflet.EasyButton.css">
+     <link rel="stylesheet" href="libs/css/styles.css">
+     
+
+
+
+
+<body>
+    
+  <div id="selectContainer">
+    <select id="countrySelect" class="form-select shadow-sm">
+        <!-- Options will be populated dynamically using JavaScript -->
+    </select>
+</div>
+
+  <div id="map"></div>
+     <!-- first Modal-->
+         
+      <!-- first Modal-->
+<div id="modal1" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title">Country Info</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+       
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-globe fa-xl text-success"></i>
+            </td>
+            <td>Continent</td>
+            <td id="continent" class="text-end">
+              
+    
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-street-view fa-xl text-success"></i>
+            </td>
+            <td>Capital</td>
+            <td id="capital" class="text-end"></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-language fa-xl text-success"></i>
+            </td>
+            <td>Languages</td>
+            <td id="languages" class="text-end"></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-users fa-xl text-success"></i>
+            </td>
+            <td>Population</td>
+            <td id="population" class="text-end"></td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-map fa-xl text-success"></i>
+            </td>
+            <td>Area in Sq Km</td>
+            <td id="areaInSqKm" class="text-end"></td>
+          </tr>
+          <tr>
+            
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+       <!-- Modal-2-->
+
+         <div id="modal2" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title"> Currency</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            
+        <button id="modal1Button" class="btn btn-primary"></button>
+
+
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-globe fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 1
+            </td>
+            <td id="attribute1" class="text-end">
+              value
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-street-view fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 2
+            </td>
+            <td class="text-end">
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal-3--> 
+   
+<div id="modal3" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title"> Weather</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-globe fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 
+            </td>
+            <td id="attribute1" class="text-end">
+              value
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-street-view fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 2
+            </td>
+            <td class="text-end">
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal-4-->
+
+<div id="modal4" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title"> Wikipedia info </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-globe fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 1
+            </td>
+            <td id="attribute1" class="text-end">
+              value
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-street-view fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 2
+            </td>
+            <td class="text-end">
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--modal-5-->
+
+<div id="modal5" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title"> Earthquakes </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-globe fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 1
+            </td>
+            <td id="attribute1" class="text-end">
+              value
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <i class="fa-solid fa-street-view fa-xl text-success"></i>
+            </td>
+            <td>
+              Attribute 2
+            </td>
+            <td class="text-end">
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+     
+
+  
+
+            
+
+  
+     
+
+     <script src="libs/js/leaflet.js"></script>
+     <script src="libs/js/jquery.min.js"></script>
+     <script src="libs/js/toastify.min.js"></script>
+     <script src="libs/js/leaflet.markercluster.js"></script>
+     <script src="libs/js/leaflet.extra-markers.js"></script>
+     <script src="libs/js/bootstrap.min.js"></script>
+     <script src="libs/js/easy-button.min.js"></script>
+   <script src="libs/js/script.js"></script>
+   <script src="libs/js/countryInfo.js"></script>
+   
+     
+</html>
