@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/css/leaflet.css">
+    <link rel="stylesheet" href="libs/css/toastify.min.css" >
+    <link rel="stylesheet" href="libs/css/MarkerCluster.Default.min.css">
+     <link rel="stylesheet" href="libs/css/leaflet.markercluster.css">
+     <link rel="stylesheet" href="libs/css/leaflet.extra-markers.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+       
+         
+
+       <link rel="stylesheet" href="libs/css/bootstrap.min.css">
+       <link rel="stylesheet" href="libs/css/Leaflet.EasyButton.css">
+     <link rel="stylesheet" href="libs/css/styles.css">
+     
+    </head>
+
+
+
+<body>
+    
+  <div id="selectContainer">
+    <select id="countrySelect" class="form-select shadow-sm">
+        <!-- Options will be populated dynamically using JavaScript -->
+    </select>
+</div>
+
+  <div id="map"></div>
+     <!-- first Modal-->
+     <!--- country info -->
+      
+      <div id="modal1" class="modal" data-bs-backdrop="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content shadow">
+            <div class="modal-header bg-success bg-gradient text-white">
+              <h5 class="modal-title"> Country Info</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-striped">
+                <tr>
+                  <td class="text-center">
+                    <!-- Icon or other content here -->
+                  </td>
+                  <td>
+                    Continent
+                  </td>
+                  <td id="txtContinent" class="text-end">
+                    <!-- Content for continent -->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <!-- Icon or other content here -->
+                  </td>
+                  <td>
+                    Capital
+                  </td>
+                  <td id="txtCapital" class="text-end">
+                    <!-- Content for capital -->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <!-- Icon or other content here -->
+                  </td>
+                  <td>
+                    Languages
+                  </td>
+                  <td id="txtLanguages" class="text-end">
+                    <!-- Content for languages -->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <!-- Icon or other content here -->
+                  </td>
+                  <td>
+                    Population
+                  </td>
+                  <td id="txtPopulation" class="text-end">
+                    <!-- Content for population -->
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-center">
+                    <!-- Icon or other content here -->
+                  </td>
+                  <td>
+                    Area
+                  </td>
+                  <td id="txtArea" class="text-end">
+                    <!-- Content for area -->
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+            
+          
+              
+      
+       
+
+
+    <!-- Modal-2-->
+<!-- Modal-2-->
+
+<!--- currency-->
+<div class="modal" id="modal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+      <div class="modal-content border-primary">
+          <div class="modal-header">
+              <h5 class="modal-title" id="modalCurrencyTitle">
+                  Currency: <span class="txtCountry"> United Kingdom</span>
+              </h5>
+              <button type="button" class="btn-close btn-close-white" aria-label="Close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <div class="d-flex flex-wrap justify-content-center lead-p">
+                  <p id="txtCurrCode" class="mb-0"></p>
+                  &nbsp;
+                  <p class="mb-0">
+                      <span id="txtCurrName" class="mb-0"></span>
+                      <h5 class="modal-title" id="modalCurrencyTitle">
+                          <span class="txtCountry">Pound Sterling</span>
+                      </h5>
+                  </p>
+                  &nbsp;<p class="txtCurrSymbol mb-0"></p>
+              </div>
+              <hr class="w-100">
+              <div class="d-flex justify-content-center flex-column align-items-center">
+                  <label for="currencyConvert" class="form-label pb-2 slight-bold">Currency Converter</label>
+                  <div class="input-group mb-3 w-100 currency-inp">
+                      <span class="input-group-text txtCurrSymbol">
+                        <i class="fa-duotone fa-circle-sterling"></i>
+                      </span>
+                      <input type="number" value="50" id="currencyConvert" class="form-control" aria-label="Amount">
+                  </div>
+                  <div class="input-group mb-3 w-100 currency-inp flex-nowrap">
+                      <select class="form-select" id="selectConversion"></select>
+                      <span class="input-group-text" id="ansConversion"></span>
+                  </div>
+                  <p class="mb-0">
+                      Exchange Rate: <span id="txtExchange"></span>
+                  </p>
+              </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-around">
+              <button type="button" class="btn btn-primary double" id="resetConverter">Reset</button>
+              <button type="button" class="btn btn-warning double" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- modal-3--> 
+
+<!---weather -->
+
+<div>
+  <select id="weatherSelect" class="form-select shadow-sm">
+      <!-- Options will be populated dynamically using JavaScript -->
+  </select>
+</div>
+
+<!-- Weather Modal -->
+<div id="modal3" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-primary bg-gradient text-white">
+        <h5 class="modal-title">Weather Information</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              <!-- Icon or other content here if needed -->
+            </td>
+            <td>
+              Clouds
+            </td>
+            <td id="txtClouds" class="text-end">
+              <!-- Content for clouds -->
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <!-- Icon or other content here if needed -->
+            </td>
+            <td>
+              Date & Time
+            </td>
+            <td id="txtDT" class="text-end">
+              <!-- Content for date & time -->
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <!-- Icon or other content here if needed -->
+            </td>
+            <td>
+              Country Code
+            </td>
+            <td id="txtCC" class="text-end">
+              <!-- Content for country code -->
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <!-- Icon or other content here if needed -->
+            </td>
+            <td>
+              Temperature
+            </td>
+            <td id="txtTemperature" class="text-end">
+              <!-- Content for temperature -->
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              <!-- Icon or other content here if needed -->
+            </td>
+            <td>
+              Humidity
+            </td>
+            <td id="txtHumidity" class="text-end">
+              <!-- Content for humidity -->
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+   
+
+<!-- modal-4-->
+
+<!---wiki -->
+
+<div id="modal4" class="modal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class='modal-content custom'>
+      
+      <div class="modal-header custom-header">
+        <h3 class='lead' id='featureName'></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class='modal-body'>
+        <div class='container flex' id="cityInfoMain">
+
+          <div class='row'>
+            <div class='col fw-bold'>Feature:</div>
+            <div class='col' id='featureType'></div>
+          </div>
+
+          <div class='row'>
+            <div class='col fw-bold'>Links:</div>
+            <div class='col' id='cityWiki'><a href="" id="cityWikiLink">To Wikipedia</a></div>
+          </div>
+
+          <div class='row'>
+            <div class='col fw-bold'>Summary:</div>
+          </div>
+
+          <div class='row'>
+            <div class='col' id='citySummary'></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="'modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!--modal-5-->
+
+<!---- earthquake-->
+
+<div id="modal5" class="modal" data-bs-backdrop="false" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content shadow">
+      <div class="modal-header bg-success bg-gradient text-white">
+        <h5 class="modal-title"> Earthquakes </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped">
+          <tr>
+            <td class="text-center">
+              
+            </td>
+            <td>
+              Attribute 1
+            </td>
+            <td id="attribute1" class="text-end">
+          
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center">
+              
+            </td>
+            <td>
+              Attribute 2
+            </td>
+            <td class="text-end">
+              value
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-success btn-sm" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+     
+
+  
+
+            
+
+  
+     
+
+     <script src="libs/js/leaflet.js"></script>
+     <script src="libs/js/jquery.min.js"></script>
+     <script src="libs/js/toastify.min.js"></script>
+     <script src="libs/js/leaflet.markercluster.js"></script>
+     <script src="libs/js/leaflet.extra-markers.js"></script>
+     <script src="libs/js/bootstrap.min.js"></script>
+     <script src="libs/js/easy-button.min.js"></script>
+   <script src="libs/js/script.js"></script>
+  
+     
+</html>
